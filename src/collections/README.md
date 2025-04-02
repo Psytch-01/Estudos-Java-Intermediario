@@ -1,90 +1,77 @@
-# List Interface
+# Java Collections Framework
 
-- A interface <code>List</code> é uma coleção ordenada que permite a inclusão de elementos duplicados.
-- É um dos tipos de coleção mais utilizados em Java, e as classes de implementação comuns são <code>ArrayList</code> e <code>LinkedList</code>.
-- A <code>List</code> se assemelha a uma matriz com comprimento dinâmico, permitindo adicionar ou remover elementos.
-- A interface <code>List</code> fornece métodos úteis para adicionar elementos em posições específicas, remover ou substituir elementos com base no índice e obter sublistas usando índices.
-- A classe <code>Collections</code> fornece algoritmos úteis para manipulação de <code>List</code>, como ordenação (sort), embaralhamento (shuffle), reversão (reverse) e busca binária (binarySearch).
+## Introdução List 📝
 
-> ##### *ArrayList*: O ArrayList é uma implementação da interface List que armazena os elementos em uma estrutura de array redimensionável. Isso significa que ele pode crescer automaticamente à medida que novos elementos são adicionados. A principal vantagem do ArrayList é o acesso rápido aos elementos por meio de índices, o que permite recuperar um elemento específico de forma eficiente. No entanto, adicionar ou remover elementos no meio da lista pode ser mais lento, pois requer a realocação de elementos.
+A interface `List` faz parte da Java Collections Framework e representa uma coleção ordenada de elementos, permitindo elementos duplicados e acesso por índice. É uma das estruturas de dados mais utilizadas devido à sua flexibilidade e eficiência em diversas operações.
 
-> ##### *LinkedList*: O LinkedList é uma implementação da interface List que armazena os elementos em uma lista duplamente vinculada. Cada elemento contém referências para o elemento anterior e próximo na lista. A principal vantagem do LinkedList é a eficiência na adição ou remoção de elementos no início ou no final da lista, pois não é necessário realocar elementos. No entanto, o acesso aos elementos por meio de índices é mais lento, pois requer percorrer a lista até o elemento desejado.
+As principais implementações de `List` são:
+>- **ArrayList**: Baseado em um array dinâmico, oferece acesso rápido por índice, mas pode ser menos eficiente para inserções e remoções no meio da lista.
 
-> ##### *Vector*: O Vector é uma implementação antiga da interface List que é semelhante ao ArrayList, mas é sincronizada, ou seja, é thread-safe. Isso significa que várias threads podem manipular um objeto Vector ao mesmo tempo sem causar problemas de concorrência. No entanto, essa sincronização adiciona uma sobrecarga de desempenho, tornando o Vector menos eficiente do que o ArrayList em cenários em que a concorrência não é um problema. Por esse motivo, o uso do Vector é menos comum em aplicações modernas.
+>- **LinkedList**: Implementado como uma lista duplamente encadeada, é eficiente para inserções e remoções, mas menos eficiente para acesso direto aos elementos.
 
-# Fixando os Conhecimentos
+>- **Vector**: Similar ao `ArrayList`, mas sincronizado para operações concorrentes. No entanto, sua utilização é menos comum atualmente devido a alternativas mais eficientes.
 
-Exercícios:
+## Operações Comuns
 
-1. Operações Básicas com List
-2. Pesquisa em List
-3. Ordenação nas List
+A interface `List` fornece métodos úteis para manipulação dos elementos:
+- `add(elemento)`: Adiciona um elemento ao final da lista.
+- `add(indice, elemento)`: Insere um elemento em uma posição específica.
+- `remove(indice)`: Remove um elemento com base no índice.
+- `get(indice)`: Obtém o elemento de um índice específico.
+- `set(indice, elemento)`: Substitui o elemento na posição especificada.
+- `contains(elemento)`: Verifica se a lista contém um determinado elemento.
+- `size()`: Retorna o número de elementos na lista.
+- `subList(inicio, fim)`: Retorna uma visão parcial da lista.
+- `sort(comparator)`: Ordena os elementos da lista com base em um comparador.
 
-## Operações Básicas com List
+Além disso, a classe `Collections` oferece métodos auxiliares para manipulação eficiente de listas, como:
+- `Collections.sort(lista)`: Ordena a lista de forma natural.
+- `Collections.reverse(lista)`: Inverte a ordem dos elementos.
+- `Collections.shuffle(lista)`: Embaralha os elementos aleatoriamente.
+- `Collections.binarySearch(lista, elemento)`: Realiza busca binária (lista precisa estar ordenada).
+
+## Exercícios Práticos List
+
+📌 `Todos os exercicios foram resolvidos e os arquivos se encontram todos na íntegra dentro deste projeto`
 
 ### 1. Lista de Tarefas
-<p>Crie uma classe chamada "ListaTarefas" que possui uma lista de tarefas como atributo. Cada tarefa é representada por uma classe chamada "Tarefa" que possui um atributo de descrição. Implemente os seguintes métodos:
+Crie uma classe chamada `ListaTarefas` que gerencia uma lista de tarefas. Cada tarefa deve ser representada por uma classe `Tarefa` contendo um atributo de descrição. Implemente os métodos:
+- `adicionarTarefa(String descricao)`: Adiciona uma nova tarefa à lista.
+- `removerTarefa(String descricao)`: Remove todas as tarefas que possuem a descrição fornecida.
+- `exibirTarefas()`: Exibe todas as tarefas na lista.
 
-- `adicionarTarefa(String descricao)`: Adiciona uma nova tarefa à lista com a descrição fornecida.
-- `removerTarefa(String descricao)`: Remove as as tarefas na lista.
+### 2. Carrinho de Compras
+Crie uma classe chamada `CarrinhoDeCompras` que representa um carrinho online. Cada item deve ser representado por uma classe `Item` com atributos como nome, preço e quantidade. Implemente:
+- `adicionarItem(String nome, double preco, int quantidade)`: Adiciona um item ao carrinho.
+- `removerItem(String nome)`: Remove um item com base no nome.
+- `calcularValorTotal()`: Retorna o valor total dos itens no carrinho.
+- `exibirItens()`: Exibe os itens com nome, preço e quantidade.
 
-### 2. Carrinho de Compras:
-
-<p>Crie uma classe chamada "CarrinhoDeCompras" que representa um carrinho de compras online. O carrinho deve ser implementado como uma lista de itens. Cada item é representado por uma classe chamada "Item" que possui atributos como nome, preço e quantidade. Implemente os seguintes métodos:
-
-- `adicionarItem(String nome, double preco, int quantidade)`: Adiciona um item ao carrinho com o nome, preço e quantidade especificados.
-- `removerItem(String nome)`: Remove um item do carrinho com base no seu nome.
-- `calcularValorTotal()`: Calcula e retorna o valor total do carrinho, levando em consideração o preço e a quantidade de cada item.
-- `exibirItens()`: Exibe todos os itens presentes no carrinho, mostrando seus nomes, preços e quantidades.
-</p>
-
-----
-
-## Pesquisa em List
-
-### 1. Catálogo de Livros
-
-<p>Crie uma classe chamada "CatalogoLivros" que possui uma lista de objetos do tipo "Livro" como atributo. Cada livro possui atributos como título, autor e ano de publicação. Implemente os seguintes métodos:
-
-- `adicionarLivro(String titulo, String autor, int anoPublicacao)`: Adiciona um livro ao catálogo.
-- `pesquisarPorAutor(String autor)`: Pesquisa livros por autor e retorna uma lista com os livros encontrados.
-- `pesquisarPorIntervaloAnos(int anoInicial, int anoFinal)`: Pesquisa livros publicados em um determinado intervalo de anos e retorna uma lista com os livros encontrados.
-- `pesquisarPorTitulo(String titulo)`: Pesquisa livros por título e retorna o primeiro livro encontrado.
-</p>
-
-### 2. Soma de Números
-
-<p>Crie uma classe chamada "SomaNumeros" que possui uma lista de números inteiros como atributo. Implemente os seguintes métodos:
-
-- `adicionarNumero(int numero)`: Adiciona um número à lista de números.
-- `calcularSoma()`: Calcula a soma de todos os números na lista e retorna o resultado.
-- `encontrarMaiorNumero()`: Encontra o maior número na lista e retorna o valor.
-- `encontrarMenorNumero()`: Encontra o menor número na lista e retorna o valor.
-- `exibirNumeros()`: Retorna uma lista contendo todos os números presentes na lista.
-
--------
-
-## Ordenação em List
-
-### 1. Ordenação de Pessoas
-
-<p>Crie uma classe chamada "OrdenacaoPessoas" que possui uma lista de objetos do tipo "Pessoa" como atributo. Cada pessoa possui atributos como nome, idade e altura. Implemente os seguintes métodos:
-
-- `adicionarPessoa(String nome, int idade, double altura)`: Adiciona uma pessoa à lista.
-- `ordenarPorIdade()`: Ordena as pessoas da lista por idade usando a interface Comparable.
-- `ordenarPorAltura()`: Ordena as pessoas da lista por altura usando um Comparator personalizado.
-</p>
-
-### 2. Ordenação de Números
-
-<p>Crie uma classe chamada "OrdenacaoNumeros" que possui uma lista de números inteiros como atributo. Implemente os seguintes métodos:
-
+### 3. Soma de Números
+Crie uma classe `SomaNumeros` que armazena uma lista de números inteiros. Implemente:
 - `adicionarNumero(int numero)`: Adiciona um número à lista.
-- `ordenarAscendente()`: Ordena os números da lista em ordem ascendente usando a interface Comparable e a class Collections.
-- `ordenarDescendente()`: Ordena os números da lista em ordem descendente usando um Comparable e a class Collections.
-</p>
+- `calcularSoma()`: Retorna a soma de todos os números.
+- `encontrarMaiorNumero()`: Retorna o maior número.
+- `encontrarMenorNumero()`: Retorna o menor número.
+- `exibirNumeros()`: Exibe todos os números armazenados.
+
+### 4. Ordenação de Números
+Crie uma classe `OrdenacaoNumeros` para gerenciar uma lista de números inteiros. Implemente:
+- `adicionarNumero(int numero)`: Adiciona um número à lista.
+- `ordenarAscendente()`: Ordena os números em ordem crescente.
+- `ordenarDescendente()`: Ordena os números em ordem decrescente.
+
+Esses exercícios ajudarão a consolidar o conhecimento sobre `List` e suas operações essenciais.
 
 ---
-### Dúvidas e Suporte
+## Introdução Map 🔑
 
-Caso você tenha alguma dúvida, problema ou sugestão, fique à vontade para abrir uma issue no repositório. Espero conseguir te ajudar! (:
+`Em Desenvolvimento`
+
+---
+
+## Introdução Set 🗃️
+
+`Em Desenvolvimento`
+
+---

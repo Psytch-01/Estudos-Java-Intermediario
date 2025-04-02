@@ -1,12 +1,12 @@
-package collections.javaAPI.list.Ordenação;
+package collections.javaAPI.list.Pesquisa;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SomaNumeros {
-    //Atributos
-
     private List<Integer> numeroList;
+
+    // Métodos
 
     public SomaNumeros() {
         this.numeroList = new ArrayList<Integer>();
