@@ -1,4 +1,4 @@
-package collections.javaAPI.list.operacoesBasicas;
+package collections.javaAPI.list.OperaçõesBasicas;
 
 public class Item {
 
