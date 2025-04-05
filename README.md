@@ -71,4 +71,20 @@ A Java Collections Framework fornece uma arquitetura unificada para armazenar e 
 📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
 
 ---
+### **Set**
+A interface `Set` é amplamente utilizada quando se deseja armazenar elementos **sem repetições**, ou seja, garantir a **unicidade** dos dados dentro de uma coleção. É útil em diversas situações.
+
+**Principais implementações**: HashSet, LinkedHashSet, TreeSet.
+
+- **Operações comuns**:
+    - `add(elemento)`: Adiciona um elemento ao conjunto (ignora duplicados).
+    - `remove(elemento)`: Remove um elemento do conjunto.
+    - `contains(elemento)`: Verifica se um elemento está presente.
+    - `isEmpty()`: Verifica se o conjunto está vazio.
+    - `size()`: Retorna o número de elementos.
+    - `clear()`: Remove todos os elementos do conjunto.
+
+📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
+
+---
 

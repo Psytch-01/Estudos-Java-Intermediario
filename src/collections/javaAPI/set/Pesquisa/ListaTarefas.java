@@ -39,18 +39,16 @@ public class ListaTarefas {
     }
 
     // Conta o número total de tarefas na lista de tarefas.
-    public int contarTarefas() {
+    public void contarTarefas() {
         if (!tarefasSet.isEmpty()) {
             System.out.println("Tarefas encontradas: " + tarefasSet.size());
-            return tarefasSet.size();
         } else {
             System.out.println("Lista vazia");
-            return 0;
         }
     }
 
     // Marca uma tarefa como concluída de acordo com a descrição.
-    public Tarefa marcarTarefaConcluida(String descricao) {
+    public void marcarTarefaConcluida(String descricao) {
         ListaTarefas listaTarefa = new ListaTarefas();
 
         Tarefa tarefaAtualizada = null;
@@ -63,7 +61,6 @@ public class ListaTarefas {
                 }
             }
         }
-        return tarefaAtualizada;
     }
 
     // Marca uma tarefa como pendente de acordo com a descrição.
