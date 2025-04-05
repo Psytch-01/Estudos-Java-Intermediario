@@ -174,7 +174,7 @@ Use Set quando:
 - É necessário ordenar automaticamente os elementos (TreeSet).
 
 --- 
-## Exercícios Práticos List
+## Exercícios Práticos Set
 📌 `Todos os exercicios foram resolvidos e os arquivos se encontram todos na íntegra dentro deste projeto`
 
 ### 1. Conjunto de Convidados
