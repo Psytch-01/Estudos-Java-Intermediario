@@ -58,19 +58,22 @@ Os projetos internos contêm exemplos práticos e exercícios para fixação dos
 ## Collections JavaAPI
 A Java Collections Framework fornece uma arquitetura unificada para armazenar e manipular grupos de objetos. Dentro desse contexto, estudamos as principais interfaces e implementações, sendo um dos primeiros focos o estudo de **List**.
 
-- **List**: Uma interface que representa uma coleção ordenada de elementos, permitindo elementos duplicados e acesso por índice.
-    - **Principais implementações**: `ArrayList`, `LinkedList`, `Vector`.
-    - **Operações comuns**:
-        - `add(elemento)`: Adiciona um elemento à lista.
-        - `remove(indice)`: Remove um elemento pelo índice.
-        - `get(indice)`: Obtém um elemento pelo índice.
-        - `set(indice, elemento)`: Atualiza um elemento em um determinado índice.
-        - `contains(elemento)`: Verifica se um elemento está presente.
-        - `size()`: Retorna o tamanho da lista.
+### **List**
+```List```: É  uma interface que representa uma coleção ordenada de elementos, permitindo elementos duplicados e acesso por índice.
+
+**Principais implementações**: `ArrayList`, `LinkedList`, `Vector`.
+- **Operações comuns**:
+    - `add(elemento)`: Adiciona um elemento à lista.
+    - `remove(indice)`: Remove um elemento pelo índice.
+    - `get(indice)`: Obtém um elemento pelo índice.
+    - `set(indice, elemento)`: Atualiza um elemento em um determinado índice.
+    - `contains(elemento)`: Verifica se um elemento está presente.
+    - `size()`: Retorna o tamanho da lista.
 
 📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
 
 ---
+
 ### **Set**
 A interface `Set` é amplamente utilizada quando se deseja armazenar elementos **sem repetições**, ou seja, garantir a **unicidade** dos dados dentro de uma coleção. É útil em diversas situações.
 
@@ -86,5 +89,4 @@ A interface `Set` é amplamente utilizada quando se deseja armazenar elementos *
 
 📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
 
----
-
+--- 
