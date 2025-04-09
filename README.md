@@ -90,3 +90,24 @@ A interface `Set` é amplamente utilizada quando se deseja armazenar elementos *
 📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
 
 --- 
+### **Map**
+A interface `Map` é utilizada para armazenar **pares de chave e valor**, onde **cada chave é única**, mas os valores podem se repetir. É extremamente útil quando se precisa associar uma chave a um dado específico, como um dicionário ou uma agenda.
+
+**Principais implementações**: HashMap, LinkedHashMap, TreeMap.
+
+- **Operações comuns**:
+  - `put(chave, valor)`: Adiciona ou atualiza o valor associado a uma chave.
+  - `get(chave)`: Retorna o valor associado à chave, ou `null` se não existir.
+  - `remove(chave)`: Remove o par chave-valor associado.
+  - `containsKey(chave)`: Verifica se a chave existe no mapa.
+  - `containsValue(valor)`: Verifica se algum valor está presente.
+  - `isEmpty()`: Verifica se o mapa está vazio.
+  - `size()`: Retorna o número de pares no mapa.
+  - `clear()`: Remove todos os pares do mapa.
+  - `keySet()`: Retorna um `Set` com todas as chaves.
+  - `values()`: Retorna uma `Collection` com todos os valores.
+  - `entrySet()`: Retorna um `Set` com todos os pares (Map.Entry).
+
+📌 **Para um estudo mais detalhado sobre List, Map e Set, considere acessar o projeto [Collections JavaAPI](https://github.com/Psytch-01/Estudos-Java-Intermediario/tree/main/src/collections)**
+
+---

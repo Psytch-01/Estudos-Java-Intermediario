@@ -64,8 +64,7 @@ Crie uma classe `OrdenacaoNumeros` para gerenciar uma lista de números inteiros
 Esses exercícios ajudarão a consolidar o conhecimento sobre `List` e suas operações essenciais.
 
 ---
-## Introdução Map 🔑
-
+## Introdução Set 🔑
 
 ### 📌 O que é Set?
 
@@ -257,8 +256,155 @@ Crie uma classe chamada "GerenciadorAlunos" que irá lidar com uma lista de alun
 
 --- 
 
-## Introdução Set 🗃️
+## Introdução Map 🗃️
 
-`Em Desenvolvimento`
+### 📌 O que é Map?
+
+`Map` é uma interface da Java Collections Framework que representa uma estrutura de dados que **mapeia chaves a valores**. Cada chave deve ser única, mas os valores podem se repetir. É ideal para armazenar pares de dados como: ID e nome, CPF e pessoa, chave e valor.
+
+---
+
+### 🔍 Principais implementações
+
+A interface `Map` é implementada por várias classes, entre as principais:
+
+###  HashMap
+- Baseado em uma **tabela hash**.
+- **Não garante ordem** das chaves.
+- Permite uma chave nula e múltiplos valores nulos.
+- É a implementação mais comum para uso geral.
+
+```java
+Map<Integer, String> usuarios = new HashMap<>();
+usuarios.put(1, "Ana");
+usuarios.put(2, "Carlos");
+usuarios.put(1, "Beatriz"); // sobrescreve o valor da chave 1
+System.out.println(usuarios); // {1=Beatriz, 2=Carlos}
+```
+
+---
+### LinkedHashMap
+- Mantém a ordem de inserção dos pares.
+
+- Um pouco mais lento que o HashMap, mas útil quando a ordem importa.
+
+```java
+Map<Integer, String> usuarios = new LinkedHashMap<>();
+usuarios.put(1, "Ana");
+usuarios.put(2, "Carlos");
+usuarios.put(3, "Beatriz");
+System.out.println(usuarios); // {1=Ana, 2=Carlos, 3=Beatriz}
+```
+### 🌲 TreeMap
+- Ordena as chaves automaticamente de forma crescente (ou por Comparator).
+
+- Baseado em árvore de busca balanceada.
+
+- Não permite chaves nulas.
+
+```java
+Map<Integer, String> usuarios = new TreeMap<>();
+usuarios.put(3, "Beatriz");
+usuarios.put(1, "Ana");
+usuarios.put(2, "Carlos");
+System.out.println(usuarios); // {1=Ana, 2=Carlos, 3=Beatriz}
+```
+### 🛠️ Métodos importantes
+- put(chave, valor) – adiciona ou atualiza o valor associado à chave.
+
+- get(chave) – retorna o valor associado à chave.
+
+- remove(chave) – remove o par com a chave especificada.
+
+- containsKey(chave) – verifica se a chave existe.
+
+- containsValue(valor) – verifica se um valor está presente.
+
+- keySet() – retorna um Set com todas as chaves.
+
+- values() – retorna uma Collection com todos os valores.
+
+- entrySet() – retorna um Set com todos os pares chave-valor.
+---
+
+### 🧠 Quando usar Map?
+**Use Map quando:**
+
+- Você precisa associar chaves únicas a valores.
+
+- Precisa de recuperação rápida de valores com base em uma chave.
+
+- A ordem não importa `HashMap`, a ordem de inserção é importante `LinkedHashMap`, ou ordenação automática é necessária `TreeMap`.
+
+---
+## Exercícios Práticos Map
+
+### 📌 Todos os exercicios foram resolvidos e os arquivos se encontram todos na íntegra dentro deste projeto
+
+## Operações Básicas com Map
+
+### 1. Agenda de Contatos
+
+<p>
+Crie uma classe chamada "AgendaContatos" que utilize um Map para armazenar os contatos. Cada contato possui um nome como chave e um número de telefone como valor. Implemente os seguintes métodos:
+
+- `adicionarContato(String nome, Integer telefone)`: Adiciona um contato à agenda, associando o nome do contato ao número de telefone correspondente.
+- `removerContato(String nome)`: Remove um contato da agenda, dado o nome do contato.
+- `exibirContatos()`: Exibe todos os contatos da agenda, mostrando o nome e o número de telefone de cada contato.
+- `pesquisarPorNome(String nome)`: Pesquisa um contato pelo nome e retorna o número de telefone correspondente.
+</p>
+
+### 2.  Dicionário
+
+<p>
+Crie uma classe chamada "Dicionario" que utilize um Map para armazenar palavras e suas respectivas definições. Implemente os seguintes métodos:
+
+- `adicionarPalavra(String palavra, String definicao)`: Adiciona uma palavra e sua definição ao dicionário, associando a palavra à sua definição correspondente.
+- `removerPalavra(String palavra)`: Remove uma palavra do dicionário, dado o termo a ser removido.
+- `exibirPalavras()`: Exibe todas as palavras e suas definições do dicionário, mostrando cada palavra seguida de sua respectiva definição.
+- `pesquisarPorPalavra(String palavra)`: Pesquisa uma palavra no dicionário e retorna sua definição correspondente.
+</p>
+
+---
+
+## Pesquisa em Map
+
+### 1. Estoque de Produtos com Preço
+
+<p>
+Crie uma classe chamada "EstoqueProdutos" que utilize um Map para armazenar os produtos, suas quantidades em estoque e seus respectivos preços. Cada produto possui um código como chave e um objeto Produto como valor, contendo nome, quantidade e preço. Implemente os seguintes métodos:
+
+- `adicionarProduto(long cod, String nome, int quantidade, double preco)`: Adiciona um produto ao estoque, juntamente com a quantidade disponível e o preço.
+- `exibirProdutos()`: Exibe todos os produtos, suas quantidades em estoque e preços.
+- `calcularValorTotalEstoque()`: Calcula e retorna o valor total do estoque, considerando a quantidade e o preço de cada produto.
+- `obterProdutoMaisCaro()`: Retorna o produto mais caro do estoque, ou seja, aquele com o maior preço.
+- `obterProdutoMaisBarato()`: Retorna o produto mais barato do estoque, ou seja, aquele com o menor preço.
+- `obterProdutoMaiorQuantidadeValorTotalNoEstoque()`: Retorna o produto que está em maior quantidade no estoque, considerando o valor total de cada produto (quantidade * preço).
+</p>
+
+### 2. Contagem de Palavras
+
+<p>
+Crie uma classe chamada "ContagemPalavras" que utilize um Map para armazenar as palavras e a quantidade de vezes que cada palavra aparece em um texto. Implemente os seguintes métodos:
+
+- `adicionarPalavra(String palavra, Integer contagem)`: Adiciona uma palavra à contagem.
+- `removerPalavra(String palavra)`: Remove uma palavra da contagem, se estiver presente.
+- `exibirContagemPalavras()`: Exibe todas as palavras e suas respectivas contagens.
+- `encontrarPalavraMaisFrequente()`: Encontra a palavra mais frequente no texto e retorna a palavra e sua contagem.
+</p>
+
+---
+
+## Ordenação nos Map
+
+### 1. Agenda de Eventos
+
+<p>
+Crie uma classe chamada "AgendaEventos" que utilize um `Map` para armazenar as datas e seus respectivos Eventos. Cada evento é representado por um objeto da classe "Evento", que possui atributos como nome do evento e o nome da atração. Implemente os seguintes métodos:
+
+- `adicionarEvento(LocalDate data, String nome, String atracao)`: Adiciona um evento à agenda.
+- `exibirAgenda()`: Exibe a agenda de eventos em ordem crescente de data.
+- `obterProximoEvento()`: Retorna o próximo evento que ocorrerá.
+</p>
 
 ---
